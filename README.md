@@ -47,4 +47,5 @@ Old version of uploading script is also here, with the AWS_S3.py, and the comman
 The email_to_sina.py is a python script to send a email with the IP address of raspberry pi in local network to the receiver, just for convenient connection by remote computer connection.
 
 Hope everyone have fun with raspberrypi and video surveillance!
-We are VSS2017
+
+We are VSS2017, We see what you can't see ^_^
