@@ -8,20 +8,27 @@ The project's aim is for using the raspberry pi to upload video surveillance fil
 
 For prepare:
 enable the camera module (not usb module) of raspberry pi with: sudo raspi-config
+
 python -m pip install oss
 
 you can use the follow command to test if the module is on
+
 raspistill -v -o test.jpg
 
 if you want to change the *.h264 video files to *.mp4 files, you can first install gpac
+
 sudo apt-get update
+
 sudo apt-get install gpac
 
 then you can change the files via:
+
 MP4Box -add filename.h264 filename.mp4
 
 for taking videos, we can use 
+
 raspivid -w 640 -h 480 -fps 25 -o $outfilename -t 10000
+
 to record a .h264 video, for more information you can see raspivid --h
 
 here in the python script, the package "oss.oss_api" is needed, so just install it with your python pip or sth else...
@@ -29,12 +36,17 @@ for the upload part, you need to know what is your server key & secret in order 
 the python script only has the function of uploading, very sorry for that, and the continue uploading is done in the bash script
 
 for the basic bash script, you need to chmod +x *.sh to let it be runable
+
 chmod +x test1.sh
+
 chmod +x upload.sh
+
 chmod +x testup.sh (just for testing whether it can be uploaded)
 
 so the last job is to run the upload.sh by
+
 ./upload.sh
+
 and enjoy your uploading!
 
 the video files here is saved according to the raspberry pi time, so remember to set it with your time zone correctly, or it might be something wrong. The raspivid parameters can be changed in the upload.sh, also the sleep time (it's prepared for breaking with ctrl + c ).
